@@ -1,0 +1,70 @@
+/*
+* ***************************  
+  written : Binuka Dasunpriya
+  date : 01th february 2021
+  uploaded : 13th June 2021
+  updated By : Binuka Dasunpriya
+  Email : binukadasunpriya@gmail.com
+  GitHub : https://github.com/BinukaDasunpriya
+
+* ***************************  
+
+
+
+ 
+
+* ***************************
+we need : 4 jumper wires 
+        : A breadboard 
+        : Arduino Uno/mega/nano board
+
+Hc sr04 ultrasonic sensor pins : trig = 2
+                               : echo = 4
+                               : Gnd = Gnd
+                               : Vcc = 5v
+         
+
+
+
+                          
+* ***************************        
+*/
+
+
+#define trig 2
+#define echo 4
+
+void setup() {
+  pinMode(trig, OUTPUT);
+  pinMode(echo,INPUT); 
+  Serial.begin(9600);
+ 
+ 
+ 
+ 
+  
+}
+
+void loop() {
+  digitalWrite(trig, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trig, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trig, LOW);
+
+ long t =  pulseIn(echo, HIGH);
+ long Cm = t / 29 / 2;
+
+ Serial.print("Cm:");
+ Serial.println(Cm);
+}
+ 
+     
+ 
+  
+ 
+
+
+   
+ 
+ 
